@@ -1,35 +1,37 @@
 package com.example.handymanadmin.models;
 
 public class RequestHandyMan {
-    private String senderUserId,handyManId;
+    private String senderUserId, handyManId;
     private String ownerName;
     private String handyManName;
-    String ownerImage, handyManImage;
+    private String ownerImage, handyManImage;
     private String reason;
-    double latitude, longitude;
+    private double latitude, longitude;
     private String occupation;
     private String response;
-    private Long date;
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
-
-    public String getHandyManName() {
-        return handyManName;
-    }
-
-    public void setHandyManName(String handyManName) {
-        this.handyManName = handyManName;
-    }
-
+    private String date;
+    private float rating;
+    private String userId;
+    private String name;
+    private String location;
+    private String details, number;
+    private String image;
+    private String distanceBetween;
+    private String senderPhoto;
+    private String senderName;
+    private String handyManPhoto;
 
 
     public RequestHandyMan() {
+
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
     }
 
     public String getSenderUserId() {
@@ -46,6 +48,22 @@ public class RequestHandyMan {
 
     public void setHandyManId(String handyManId) {
         this.handyManId = handyManId;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+    public String getHandyManName() {
+        return handyManName;
+    }
+
+    public void setHandyManName(String handyManName) {
+        this.handyManName = handyManName;
     }
 
     public String getOwnerImage() {
@@ -104,11 +122,91 @@ public class RequestHandyMan {
         this.response = response;
     }
 
-    public Long getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Long date) {
+    public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getDistanceBetween() {
+        return distanceBetween;
+    }
+
+    public void setDistanceBetween(String distanceBetween) {
+        this.distanceBetween = distanceBetween;
+    }
+
+    public String getSenderPhoto() {
+        return senderPhoto;
+    }
+
+    public void setSenderPhoto(String senderPhoto) {
+        this.senderPhoto = senderPhoto;
+    }
+
+    public String getSenderName() {
+        return senderName;
+    }
+
+    public void setSenderName(String senderName) {
+        this.senderName = senderName;
+    }
+
+    public String getHandyManPhoto() {
+        return handyManPhoto;
+    }
+
+    public void setHandyManPhoto(String handyManPhoto) {
+        this.handyManPhoto = handyManPhoto;
     }
 }

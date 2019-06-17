@@ -16,7 +16,7 @@ public class HandyMan {
     }
 
     public HandyMan(String userId, String name, double latitude, double longitude, String occupation,
-                     String number, String image) {
+                    String number, String image) {
         this.userId = userId;
         this.name = name;
         this.latitude = latitude;
@@ -25,25 +25,6 @@ public class HandyMan {
         this.number = number;
         this.image = image;
     }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    String distanceBetween;
-
 
     public String getUserId() {
         return userId;
@@ -60,7 +41,6 @@ public class HandyMan {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public String getReason() {
         return reason;
@@ -126,11 +106,19 @@ public class HandyMan {
         this.details = details;
     }
 
-    public String getDistanceBetween() {
-        return distanceBetween;
+    public String getNumber() {
+        return number;
     }
 
-    public void setDistanceBetween(String distanceBetween) {
-        this.distanceBetween = distanceBetween;
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

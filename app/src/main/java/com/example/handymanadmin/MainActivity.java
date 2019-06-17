@@ -4,8 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DividerItemDecoration;
@@ -14,7 +12,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -112,7 +109,6 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
 
 
@@ -216,7 +212,7 @@ public class MainActivity extends AppCompatActivity
                 SendUserToLoginActivity();
             } else {
                 Log.d(TAG, "onStart: successful");
-                retrieveUserDetails();
+                //retrieveUserDetails();
                 adapter.startListening();
 
             }
@@ -228,7 +224,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private void retrieveUserDetails() {
+   /* private void retrieveUserDetails() {
 
         UserRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -265,7 +261,9 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-    }
+    }*/
+
+
     private void SendUserToLoginActivity() {
         Intent Login = new Intent(MainActivity.this,SplashScreenActivity.class);
         startActivity(Login);
@@ -288,6 +286,8 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setVisibility(View.VISIBLE);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(layoutManager);
 
         DividerItemDecoration itemDecoration = new DividerItemDecoration(recyclerView.getContext(), layoutManager.getOrientation());

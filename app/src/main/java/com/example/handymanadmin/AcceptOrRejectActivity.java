@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -26,16 +27,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AcceptOrRejectActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnAcpt, btnRejct;
-    private String uid, response, getHandyManId, getLocation, getName, getDate, getReason, getPhoto, adapterPosition;
+    private static final String TAG = "AcceptOrRejectActivity";
+    private String uid, response,  getName, getDate, getReason, getPhoto, adapterPosition;
     private Intent intent;
-    TextView name, dtate, reason;
+    TextView name, mDate, reason;
     ProgressDialog loading;
     CircleImageView mPhto;
     private String notApproved, accepted, rejected;
@@ -100,7 +104,7 @@ public class AcceptOrRejectActivity extends AppCompatActivity implements View.On
 
         intent = getIntent();
         name = findViewById(R.id.txtFromUser);
-        dtate = findViewById(R.id.txtToBeDonAt);
+        mDate = findViewById(R.id.txtDateToBeDone);
         reason = findViewById(R.id.txtReasonForRequest);
         loading = new ProgressDialog(this);
         mPhto = findViewById(R.id.mPhto);
@@ -110,13 +114,17 @@ public class AcceptOrRejectActivity extends AppCompatActivity implements View.On
         if (intent != null) {
             adapterPosition = intent.getStringExtra("position");
             getName = intent.getStringExtra("name");
-            getDate = intent.getStringExtra("date");
+            getDate = intent.getStringExtra("startDate");
             getReason = intent.getStringExtra("reason");
             getPhoto = intent.getStringExtra("image");
             // getLocation = intent.getStringExtra("location");
 
+
+
             name.setText(getName);
-            dtate.setText(getDate);
+            mDate.setText( getDate);
+
+            Log.i(TAG, "date : " + getDate);
             reason.setText(getReason);
             Glide.with(this).load(getPhoto).into(mPhto);
 

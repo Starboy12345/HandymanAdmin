@@ -33,4 +33,6 @@
         <item>Painter</item>
     </string-array>
     <string name="title_activity_main">HandyMan Worker </string>
+    <string name="write_your_message">Write your message</string>
+    <string name="delete">delete</string>
 </resources>
